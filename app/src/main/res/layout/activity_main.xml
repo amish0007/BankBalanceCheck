@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/lnrAppName"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/main"
+        android:elevation="2dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="CHECK BALANCE"
+            android:textColor="@color/white"
+            android:textSize="21dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relBankSelect"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/rectangle"
+        android:elevation="5dp">
+        <TextView
+            android:id="@+id/txtBankSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Select Your Bank"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+        <ImageView
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/next"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/lnrCategory1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@id/relBankSelect">
+    <RelativeLayout
+        android:id="@+id/relEmi"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/rectangle">
+        <ImageView
+            android:id="@+id/imgEmi"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/emi"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/txtEmi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgEmi"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="EMI Calculator"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relMutual"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/rectangle">
+        <ImageView
+            android:id="@+id/imgMutual"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/mutual_fund"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/txtIFSC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgMutual"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="Mutual Fund"/>
+    </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnrCategory2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@id/lnrCategory1">
+        <RelativeLayout
+            android:id="@+id/relGST"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/rectangle">
+            <ImageView
+                android:id="@+id/imgGST"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/gst"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:id="@+id/txtGST"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgGST"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="GST Calculator"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relSIP"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/rectangle">
+            <ImageView
+                android:id="@+id/imgSIP"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/sip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:id="@+id/txtSIP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgSIP"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="SIP Calculator"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
