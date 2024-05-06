@@ -1,14 +1,19 @@
 package com.example.bankbalancecheck.activity;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.bankbalancecheck.R;
 import com.example.bankbalancecheck.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -64,22 +69,26 @@ public class MainActivity extends AppCompatActivity {
     }
     void exit()
     {
-        AlertDialog alertDialog = new AlertDialog.Builder(this).
-                setCancelable(false).setTitle("Do you want to exit?").
-                setMessage("Bank Balance Check").
-                setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                }).
-                setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                }).create();
-        alertDialog.show();
+        Dialog dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.exit_dialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
+
+        TextView txtYes = dialog.findViewById(R.id.txtYes);
+        TextView txtNo = dialog.findViewById(R.id.txtNo);
+
+        txtYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        txtNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
 
     }
 }

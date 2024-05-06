@@ -3,7 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="main">#0CD425</color>
-    <color name="bgImg">#D2D9D2</color>
+    <color name="bgImg">#DEE4DE</color>
     <color name="darkGreen">#066E14</color>
     <color name="bgText">#93BD93</color>
 </resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/card"
+    android:backgroundTint="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/dialogAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/main">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Bank Balance Check"
+                android:textColor="@color/white"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:textSize="20dp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txtExit"
+        android:layout_below="@id/dialogAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:text="Do you want to exit ?"
+        android:textSize="18dp"
+        android:textColor="@color/black"/>
+
+    <RelativeLayout
+        android:id="@+id/lnrYesOrNo"
+        android:layout_below="@id/txtExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp">
+
+        <TextView
+            android:id="@+id/txtYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:layout_toStartOf="@id/txtNo"
+            android:textColor="@color/main"
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/txtNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:textColor="@color/main"
+            android:layout_alignParentEnd="true"
+            android:layout_marginHorizontal="30dp"
+            android:textSize="15dp"
+            android:gravity="center"/>
+    </RelativeLayout>
+</RelativeLayout>
