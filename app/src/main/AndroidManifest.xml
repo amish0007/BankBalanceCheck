@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +18,16 @@
         android:theme="@style/Theme.BankBalanceCheck"
         tools:targetApi="31">
         <activity
-            android:name=".EMICalculatorActivity"
+            android:name=".activity.InterestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.GstCalculatorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MutualFundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.EMICalculatorActivity"
             android:exported="false" />
         <activity
             android:name=".activity.BankInfoActivity"
@@ -32,7 +46,8 @@
         </activity>
         <activity
             android:name=".activity.MainActivity"
-            android:exported="true" />
+            android:exported="true"/>
     </application>
+
 
 </manifest>

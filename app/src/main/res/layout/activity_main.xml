@@ -141,28 +141,28 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/relSIP"
+            android:id="@+id/relInterest"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
             android:layout_marginLeft="5dp"
             android:background="@drawable/rectangle">
             <ImageView
-                android:id="@+id/imgSIP"
+                android:id="@+id/imgInterest"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/sip"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"/>
             <TextView
-                android:id="@+id/txtSIP"
+                android:id="@+id/txtInterest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/imgSIP"
+                android:layout_below="@id/imgInterest"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 android:gravity="center"
-                android:text="SIP Calculator"/>
+                android:text="Interest Calculator"/>
         </RelativeLayout>
     </LinearLayout>
 

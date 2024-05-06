@@ -27,11 +27,10 @@ public class BanksActivity extends AppCompatActivity {
                         "ICICI Bank",
                         "Axis Bank",
                         "Punjab National Bank(PNB)",
-                        "Bank of India(BOI)",
+                        "Central Bank of India",
                         "IDFC Bank",
                         "Kotak Mahindra Bank",
                         "Yes Bank"};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +46,7 @@ public class BanksActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(BanksActivity.this,BankInfoActivity.class);
                 intent.putExtra("BankName",bankNames[position]);
+                intent.putExtra("index",position);
                 startActivity(intent);
             }
         });

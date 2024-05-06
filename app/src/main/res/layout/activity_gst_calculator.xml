@@ -3,62 +3,90 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".activity.EMICalculatorActivity">
-    
+    tools:context=".activity.GstCalculatorActivity">
+
     <RelativeLayout
-        android:id="@+id/relEmi"
+        android:id="@+id/relGst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
-        
+
         <ImageView
-            android:id="@+id/imgEmiBack"
+            android:id="@+id/imgGstBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:src="@drawable/back"/>
-        
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EMI Calculator"
+            android:text="GST Calculator"
             android:textAlignment="center"
             android:textSize="18dp"
             android:textColor="@color/black"
             android:layout_centerVertical="true"/>
     </RelativeLayout>
-    
-    <LinearLayout
-        android:id="@+id/relLoanAmt"
-        android:layout_below="@id/relEmi"
+
+    <RadioGroup
+        android:id="@+id/rgGst"
+        android:layout_below="@id/relGst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_marginTop="20dp"
+        android:theme="@style/MyTextInputLayout_overlay"
+        android:layout_marginHorizontal="20dp">
+        <RadioButton
+            android:id="@+id/rbGSTExclusive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="GST Exclusive"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/rbGSTInclusive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GST Inclusive"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/lnrTotalAmt"
+        android:layout_below="@id/rgGst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="10dp"
         android:padding="10dp">
         <TextView
-            android:id="@+id/txtLoanAmt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Loan Amount"
             android:layout_weight="2"
-            android:layout_marginLeft="10dp"
+            android:text="Total Amount"
             android:textSize="15dp"
             android:textColor="@color/black"
             android:textStyle="bold"/>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtLoanAmtLayout"
+            android:id="@+id/edtGSTAmtLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:hint="Total Amount"
             android:theme="@style/MyTextInputLayout_overlay"
             app:endIconMode="clear_text"
-            android:hint="Amount"
-            android:layout_marginLeft="20dp">
+            android:layout_weight="1">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtLoanAmt"
+                android:id="@+id/edtGSTAmt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -67,68 +95,31 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/relIntRate"
-        android:layout_below="@id/relLoanAmt"
+        android:id="@+id/lnrGSTRate"
+        android:layout_below="@id/lnrTotalAmt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="10dp"
         android:padding="10dp">
         <TextView
-            android:id="@+id/txtIntRate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Interest Rate in(%)"
-            android:layout_marginLeft="10dp"
-            android:textSize="15dp"
             android:layout_weight="2"
+            android:text="GST (in %)"
+            android:textSize="15dp"
             android:textColor="@color/black"
             android:textStyle="bold"/>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtIntRateLayout"
+            android:id="@+id/edtGSTRateLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             app:endIconMode="clear_text"
+            android:hint="GST Rate"
             android:theme="@style/MyTextInputLayout_overlay"
-            android:hint="Interest Rate"
-            android:layout_marginLeft="20dp">
+            android:layout_weight="1">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtIntRate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:inputType="number"/>
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/relTime"
-        android:layout_below="@id/relIntRate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:padding="10dp">
-        <TextView
-            android:id="@+id/txtTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Time Period          in Years"
-            android:layout_marginLeft="10dp"
-            android:textSize="15dp"
-            android:layout_weight="2"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtTimeLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:theme="@style/MyTextInputLayout_overlay"
-            app:endIconMode="clear_text"
-            android:hint="Years"
-            android:layout_marginLeft="20dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtTime"
+                android:id="@+id/edtGSTRate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -137,8 +128,8 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/emiClearAll"
-        android:layout_below="@id/relTime"
+        android:id="@+id/gstClearAll"
+        android:layout_below="@id/lnrGSTRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -149,8 +140,8 @@
         android:textSize="15dp"/>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvEmiCalc"
-        android:layout_below="@id/emiClearAll"
+        android:id="@+id/cvGSTCalc"
+        android:layout_below="@id/gstClearAll"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
@@ -159,30 +150,32 @@
         android:layout_centerHorizontal="true">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:text="Calculate"
             android:textColor="@color/white" />
     </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:id="@+id/lnrResultSec1"
-        android:layout_below="@id/cvEmiCalc"
+        android:layout_below="@id/cvGSTCalc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp">
         <TextView
+            android:id="@+id/txtTotalGST"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Interest Amount"
+            android:text=""
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="@color/black"/>
         <TextView
+            android:id="@+id/txtTotalGSTAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Total Interest"
+            android:text=""
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="@color/black"/>
@@ -194,43 +187,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp">
         <TextView
-            android:id="@+id/ansIntAmount"
+            android:id="@+id/ansTotalGST"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="---"
+            android:text=""
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="@color/black"/>
         <TextView
-            android:id="@+id/ansTotInterest"
+            android:id="@+id/ansTotalGSTAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="---"
+            android:text=""
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="@color/black"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/lnrResultSec3"
-        android:layout_below="@id/lnrResultSec2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Total Payable Amount"
-            android:gravity="center"
-            android:textColor="@color/black"/>
-        <TextView
-            android:id="@+id/ansTotPayAmount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="---"
-            android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:textColor="@color/black"/>
-    </LinearLayout>
 </RelativeLayout>
