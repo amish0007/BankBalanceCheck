@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(EmiIntent);
             }
         });
-        binding.relMutual.setOnClickListener(new View.OnClickListener() {
+        binding.relSIP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent mutualIntent = new Intent(MainActivity.this,MutualFundActivity.class);

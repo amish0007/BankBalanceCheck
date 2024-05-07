@@ -76,7 +76,7 @@ public class EMICalculatorActivity extends AppCompatActivity {
                     totalPay=totalIntAmt+amounts;
 
                     binding.ansIntAmount.setText(""+totalIntAmt);
-                    binding.ansTotInterest.setText(""+rates);
+                    binding.ansTotInterest.setText(""+rates+"%");
                     binding.ansTotPayAmount.setText(""+totalPay);
                 }
             }

@@ -83,7 +83,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/relMutual"
+        android:id="@+id/relSIP"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_weight="1"
@@ -97,14 +97,14 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"/>
         <TextView
-            android:id="@+id/txtIFSC"
+            android:id="@+id/txtSIP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/imgMutual"
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
             android:gravity="center"
-            android:text="Mutual Fund"/>
+            android:text="SIP Calculator"/>
     </RelativeLayout>
     </LinearLayout>
 
