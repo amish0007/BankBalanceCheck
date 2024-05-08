@@ -2,21 +2,13 @@ package com.example.bankbalancecheck.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.bankbalancecheck.BankNameAdapter;
+import com.example.bankbalancecheck.adapter.BankNameAdapter;
 import com.example.bankbalancecheck.databinding.ActivityBanksBinding;
-import com.example.bankbalancecheck.databinding.BankNameBinding;
-
-import java.io.Serializable;
 
 public class BanksActivity extends AppCompatActivity {
 

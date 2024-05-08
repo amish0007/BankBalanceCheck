@@ -1,10 +1,12 @@
-package com.example.bankbalancecheck;
+package com.example.bankbalancecheck.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.example.bankbalancecheck.R;
 
 public class BankNameAdapter extends BaseAdapter {
     String[] banks={};
